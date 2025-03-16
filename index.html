@@ -4,7 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Live Scores</title>
+    <body>
+        <div class="container">
+            <img src="images 22/Bundasliga.png">
+            <img src="images 22/Ligue 1.png">
+            <img src="images 22/premier-league.avif">
+            <img src="images 22/Serie A.jpg">
+        </div>
+    </body>
     <style>
+        body {
+            background-color: grey;
+        }
+
+        .container {
+            margin: 100px 0 0 200px;
+            width: 70%;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .container img {
+            width: 10%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid grey;
+            transition: all ease-in-out;
+        }
+
+        .contaner img:hover {
+            width: 25%;
+        }
 
         * {
             margin: 5px;
