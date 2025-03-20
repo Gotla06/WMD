@@ -4,7 +4,7 @@ body {
 
 .container {
     margin: 100px 0 0 200px;
-    width: 100%;
+    width: 50%;
     height: 20px;
     display:flex;
     justify-content: center;
@@ -12,7 +12,7 @@ body {
 }
 
 .container img {
-    width: 100%;
+    width: 50%;
     height:20%;
     object-fit: cover;
     border-radius: 60px;
