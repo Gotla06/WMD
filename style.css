@@ -4,7 +4,7 @@ body {
 
 .container {
     margin: 100px 0 0 200px;
-    width: 50%;
+    width: 25%;
     height: 20px;
     display:flex;
     justify-content: center;
@@ -12,7 +12,7 @@ body {
 }
 
 .container img {
-    width: 50%;
+    width: 25%;
     height:20%;
     object-fit: cover;
     border-radius: 60px;
@@ -21,5 +21,5 @@ body {
 }
 
 .container img:hover {
-    width:50%;
+    width:25%;
 }
