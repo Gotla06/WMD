@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EuroScores - Live Football Scores</title>
+    <title>Feedback | EuroScores</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/logo.png">
@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="live.html">Live Scores</a>
@@ -37,7 +37,7 @@
                             <a class="nav-link" href="news.html">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="feedback.html">Feedback</a>
+                            <a class="nav-link active" href="feedback.html">Feedback</a>
                         </li>
                     </ul>
                 </div>
@@ -46,74 +46,57 @@
     </header>
 
     <main class="container my-4">
-        <section class="hero-section mb-5">
-            <div class="row">
-                <div class="col-md-8 mx-auto text-center">
-                    <h1 class="display-4">Live Football Scores</h1>
-                    <p class="lead">Real-time scores from top European leagues</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="featured-matches mb-5">
-            <h2 class="text-center mb-4">Featured Matches</h2>
-            <div class="row" id="featuredMatches">
-                <!-- JavaScript will populate this -->
-            </div>
-        </section>
-
-        <section class="quick-scores mb-5">
-            <h2 class="text-center mb-4">Today's Scores</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>League</th>
-                            <th>Match</th>
-                            <th>Score</th>
-                            <th>Time</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="quickScores">
-                        <!-- JavaScript will populate this -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="league-overview">
-            <h2 class="text-center mb-4">Top Leagues</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card league-card">
-                        <img src="img/premier-league.png" class="card-img-top" alt="Premier League">
-                        <div class="card-body">
-                            <h5 class="card-title">Premier League</h5>
-                            <a href="leagues.html?league=premier-league" class="btn btn-primary">View Table</a>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Contact Us</h1>
+                <form id="feedbackForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">
+                            Please provide your name.
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card league-card">
-                        <img src="img/laliga.png" class="card-img-top" alt="La Liga">
-                        <div class="card-body">
-                            <h5 class="card-title">La Liga</h5>
-                            <a href="leagues.html?league=laliga" class="btn btn-primary">View Table</a>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid email.
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card league-card">
-                        <img src="img/bundesliga.png" class="card-img-top" alt="Bundesliga">
-                        <div class="card-body">
-                            <h5 class="card-title">Bundesliga</h5>
-                            <a href="leagues.html?league=bundesliga" class="btn btn-primary">View Table</a>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select class="form-select" id="subject" required>
+                            <option value="" selected disabled>Choose a subject</option>
+                            <option value="feedback">General Feedback</option>
+                            <option value="bug">Report a Bug</option>
+                            <option value="suggestion">Feature Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a subject.
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter your message.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="subscribe" checked>
+                        <label class="form-check-label" for="subscribe">Subscribe to our newsletter</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <div id="successMessage" class="alert alert-success mt-3 d-none">
+                    Thank you for your feedback! We'll get back to you soon.
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="bg-dark text-white py-4">
@@ -147,6 +130,5 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/scores.js"></script>
 </body>
 </html>

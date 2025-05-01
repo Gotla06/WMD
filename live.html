@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Scores | EuroScores</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="EuroScores Logo" width="30" height="30" class="d-inline-block align-top">
+                    EuroScores
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="live.html">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="leagues.html">Leagues</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="display-4">Live Scores</h1>
+                <p class="lead">Real-time updates from all top matches</p>
+                <button id="refreshBtn" class="btn btn-primary">
+                    <i class="bi bi-arrow-clockwise"></i> Refresh
+                </button>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="leagueTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">All Matches</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="premier-tab" data-bs-toggle="tab" data-bs-target="#premier" type="button">Premier League</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="laliga-tab" data-bs-toggle="tab" data-bs-target="#laliga" type="button">La Liga</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="bundesliga-tab" data-bs-toggle="tab" data-bs-target="#bundesliga" type="button">Bundesliga</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="seriea-tab" data-bs-toggle="tab" data-bs-target="#seriea" type="button">Serie A</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="ligue1-tab" data-bs-toggle="tab" data-bs-target="#ligue1" type="button">Ligue 1</button>
+                    </li>
+                </ul>
+                <div class="tab-content p-3 border border-top-0 rounded-bottom" id="leagueTabsContent">
+                    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                        <div id="allMatches" class="row">
+                            <!-- All matches will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="premier" role="tabpanel">
+                        <div id="premierMatches" class="row">
+                            <!-- Premier League matches will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="laliga" role="tabpanel">
+                        <div id="laligaMatches" class="row">
+                            <!-- La Liga matches will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bundesliga" role="tabpanel">
+                        <div id="bundesligaMatches" class="row">
+                            <!-- Bundesliga matches will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="seriea" role="tabpanel">
+                        <div id="serieaMatches" class="row">
+                            <!-- Serie A matches will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="ligue1" role="tabpanel">
+                        <div id="ligue1Matches" class="row">
+                            <!-- Ligue 1 matches will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EuroScores</h5>
+                    <p>Your source for live football scores and statistics from top European leagues.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="live.html" class="text-white">Live Scores</a></li>
+                        <li><a href="leagues.html" class="text-white">Leagues</a></li>
+                        <li><a href="feedback.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect</h5>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 EuroScores. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scores.js"></script>
+</body>
+</html>
