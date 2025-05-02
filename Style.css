@@ -1,14 +1,14 @@
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: windows-system, sans-serif;
-}
+
+    margin
+    padding
+    box-sizing:border-box
+    text-decoration:none
+    list-style:none
+    border:none
+    outline:none
+    scroll-behavior:smooth
+    font-family:sans-serif
+
 
 :root {
     --bg-colour: #000;
@@ -24,7 +24,7 @@ html{
 
 body{
     background: var(--bg colour);
-    colour: var(--text colour);
+    color: var(--text colour);
 }
 
 section{
@@ -49,7 +49,7 @@ header{
 
 .logo{
     font-size: 3rem;
-    colour: var(--text colour);
+    color: var(--text colour);
     font-weight: 800;
     cursor:pointer;
     transition:0.3s ease-in-out;
