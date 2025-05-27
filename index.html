@@ -6,37 +6,488 @@
     <meta name="description" content="POWERHOUSE GYM - Premium fitness facility in Botswana">
     <title>POWERHOUSE GYM - Transform Your Body</title>
     
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="fas fa-dumbbell me-2" aria-hidden="true"></i>POWERHOUSE GYM
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#membership">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trainers">Trainers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger ms-3" onclick="openMembershipModal()">Join Now</button>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="home" tabindex="-1">
+        <div class="container">
+            <h1 class="display-3 fw-bold">POWERHOUSE GYM</h1>
+            <p class="lead fs-4">FEEL THE POWER</p>
+            <a href="#membership" class="btn btn-danger btn-lg mt-3">Get Started</a>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main id="main-content">
+        <!-- Membership Section -->
+        <section class="py-5" id="membership">
+            <div class="container">
+                <h2 class="text-center mb-5">Membership Plans</h2>
+                <div class="row g-4">
+                    <!-- Basic Plan -->
+                    <div class="col-md-4">
+                        <div class="card pricing-card h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="text-center">Basic</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center">P350<span class="text-muted">/month</span></h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Access to gym equipment</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Locker room access</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Free WiFi</li>
+                                    <li class="mb-2"><i class="fas fa-times text-secondary me-2"></i>Group classes</li>
+                                    <li class="mb-2"><i class="fas fa-times text-secondary me-2"></i>Personal trainer</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-outline-primary w-100" onclick="openMembershipModal('Basic')">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Popular Plan -->
+                    <div class="col-md-4">
+                        <div class="card pricing-card h-100 popular">
+                            <div class="card-header bg-primary text-white position-relative">
+                                <h3 class="text-center">Premium</h3>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    Popular
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center">P600<span class="text-muted">/month</span></h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>All Basic benefits</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Unlimited group classes</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Sauna access</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Monthly body assessment</li>
+                                    <li class="mb-2"><i class="fas fa-times text-secondary me-2"></i>Personal trainer</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary w-100" onclick="openMembershipModal('Premium')">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- VIP Plan -->
+                    <div class="col-md-4">
+                        <div class="card pricing-card h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="text-center">VIP</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-center">P1,200<span class="text-muted">/month</span></h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>All Premium benefits</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Personal trainer (4 sessions/month)</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Nutrition consultation</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>24/7 access</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Guest passes (2/month)</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-outline-primary w-100" onclick="openMembershipModal('VIP')">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section class="py-5 bg-light" id="classes">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Classes</h2>
+                <div class="row g-4">
+                    <!-- Cardio Blast -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" class="card-img-top" alt="Cardio class in session">
+                            <div class="card-body">
+                                <h3 class="card-title">Cardio Blast</h3>
+                                <p class="card-text">High-energy cardio workout combining HIIT, cycling, and dance elements to burn maximum calories.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Mon, Wed, Fri - 6:00 AM & 6:00 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Tshepo</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: Intermediate</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Power Yoga -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3" class="card-img-top" alt="Yoga class in session">
+                            <div class="card-body">
+                                <h3 class="card-title">Power Yoga</h3>
+                                <p class="card-text">Dynamic yoga flow that builds strength, flexibility, and mindfulness through challenging poses.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Tue, Thu - 7:00 AM & 7:00 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Amantle</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: All levels</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Strength Training -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3" class="card-img-top" alt="Strength training class">
+                            <div class="card-body">
+                                <h3 class="card-title">Strength Training</h3>
+                                <p class="card-text">Build muscle and increase strength using free weights, resistance bands, and bodyweight exercises.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Mon, Wed, Fri - 5:00 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Kagiso</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: Beginner to Advanced</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Zumba -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3" class="card-img-top" alt="Zumba class">
+                            <div class="card-body">
+                                <h3 class="card-title">Zumba</h3>
+                                <p class="card-text">Dance-based fitness program featuring international music and choreography for a fun workout.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Sat - 9:00 AM & 4:00 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Lesego</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: All levels</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CrossFit -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3" class="card-img-top" alt="CrossFit training">
+                            <div class="card-body">
+                                <h3 class="card-title">CrossFit</h3>
+                                <p class="card-text">High-intensity functional training combining weightlifting, gymnastics, and cardio for total fitness.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Tue, Thu, Sat - 5:30 AM & 5:30 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Thabo</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: Advanced</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pilates -->
+                    <div class="col-md-4">
+                        <div class="card class-card h-100">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3" class="card-img-top" alt="Pilates class">
+                            <div class="card-body">
+                                <h3 class="card-title">Pilates</h3>
+                                <p class="card-text">Low-impact exercises to improve flexibility, posture, and core strength using controlled movements.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-primary me-2"></i> Mon, Wed, Fri - 10:00 AM & 7:30 PM</li>
+                                    <li><i class="fas fa-user text-primary me-2"></i> Instructor: Boipelo</li>
+                                    <li><i class="fas fa-level-up-alt text-primary me-2"></i> Level: Beginner to Intermediate</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Join Class</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainers Section -->
+        <section class="py-5" id="trainers">
+            <div class="container">
+                <h2 class="text-center mb-5">Meet Our Trainers</h2>
+                <div class="row g-4">
+                    <!-- Trainer 1 -->
+                    <div class="col-md-4">
+                        <div class="card trainer-card h-100">
+                            <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3" class="card-img-top trainer-img" alt="Trainer Kagiso">
+                            <div class="card-body">
+                                <h3 class="card-title">Kagiso Molefe</h3>
+                                <h5 class="text-primary">Strength & Conditioning Specialist</h5>
+                                <p class="card-text">With 10 years of experience, Kagiso specializes in strength training, powerlifting, and functional fitness.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-award text-primary me-2"></i> Certified NASM Personal Trainer</li>
+                                    <li><i class="fas fa-dumbbell text-primary me-2"></i> Specializes in: Strength Training, Powerlifting</li>
+                                    <li><i class="fas fa-quote-left text-primary me-2"></i> "Strength doesn't come from what you can do. It comes from overcoming the things you once thought you couldn't."</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trainer 2 -->
+                    <div class="col-md-4">
+                        <div class="card trainer-card h-100">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" class="card-img-top trainer-img" alt="Trainer Amantle">
+                            <div class="card-body">
+                                <h3 class="card-title">Amantle Kgosi</h3>
+                                <h5 class="text-primary">Yoga & Mobility Coach</h5>
+                                <p class="card-text">Amantle brings 8 years of yoga expertise with a focus on mobility, flexibility, and mindfulness practices.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-award text-primary me-2"></i> RYT 500 Certified Yoga Instructor</li>
+                                    <li><i class="fas fa-dumbbell text-primary me-2"></i> Specializes in: Yoga, Mobility, Recovery</li>
+                                    <li><i class="fas fa-quote-left text-primary me-2"></i> "Yoga is not about touching your toes, it's about what you learn on the way down."</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trainer 3 -->
+                    <div class="col-md-4">
+                        <div class="card trainer-card h-100">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3" class="card-img-top trainer-img" alt="Trainer Thabo">
+                            <div class="card-body">
+                                <h3 class="card-title">Thabo Ramotswe</h3>
+                                <h5 class="text-primary">CrossFit & HIIT Specialist</h5>
+                                <p class="card-text">Thabo is a competitive CrossFit athlete who brings high-intensity training to all fitness levels.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-award text-primary me-2"></i> CrossFit Level 2 Trainer</li>
+                                    <li><i class="fas fa-dumbbell text-primary me-2"></i> Specializes in: CrossFit, HIIT, Endurance</li>
+                                    <li><i class="fas fa-quote-left text-primary me-2"></i> "The only bad workout is the one that didn't happen."</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <button class="btn btn-primary">Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-5 bg-light" id="gallery">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Facility</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" alt="Weight training area with various equipment" class="img-fluid gallery-img rounded">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3" alt="Cardio equipment section with treadmills and bikes" class="img-fluid gallery-img rounded">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3" alt="Group fitness class in session" class="img-fluid gallery-img rounded">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3" alt="Personal trainer working with client" class="img-fluid gallery-img rounded">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3" alt="Locker room facilities" class="img-fluid gallery-img rounded">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1590239926044-4131f5d0654d?ixlib=rb-4.0.3" alt="Relaxation area with sauna" class="img-fluid gallery-img rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-5" id="contact">
+            <div class="container">
+                <h2 class="text-center mb-5">Contact Us</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required aria-required="true">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required aria-required="true">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Visit Us</h3>
+                                <p class="card-text">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i> Plot 123, Main Mall<br>
+                                    Gaborone, Botswana
+                                </p>
+                                <p class="card-text">
+                                    <i class="fas fa-phone text-primary me-2"></i> +267 123 4567
+                                </p>
+                                <p class="card-text">
+                                    <i class="fas fa-envelope text-primary me-2"></i> info@powerhousegym.co.bw
+                                </p>
+                                <h4 class="mt-4">Opening Hours</h4>
+                                <p class="card-text">
+                                    Monday - Friday: 5:30 AM - 10:00 PM<br>
+                                    Saturday: 7:00 AM - 8:00 PM<br>
+                                    Sunday: 8:00 AM - 6:00 PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Membership Modal -->
     <div id="membershipModal" class="membership-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Join POWERHOUSE GYM</h2>
+            <form id="membershipForm">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="membershipType" class="form-label">Membership Type</label>
+                    <select class="form-select" id="membershipType" required>
+                        <option value="">Select membership</option>
+                        <option value="Basic">Basic - P350/month</option>
+                        <option value="Premium">Premium - P600/month</option>
+                        <option value="VIP">VIP - P1,200/month</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="startDate" class="form-label">Preferred Start Date</label>
+                    <input type="date" class="form-control" id="startDate" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                    <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>POWERHOUSE GYM</h3>
+                    <p>Your premier fitness destination in Botswana.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#membership" class="text-white">Membership</a></li>
+                        <li><a href="#classes" class="text-white">Classes</a></li>
+                        <li><a href="#trainers" class="text-white">Trainers</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 POWERHOUSE GYM. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
